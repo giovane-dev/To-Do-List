@@ -78,53 +78,57 @@ while True:
   |  For exiting press 0                  |
   -----------------------------------------
           """)
-    opt=int(input("Please enter your option here :"))
+    try:      
+        opt=int(input("Please enter your option here :"))
 
-    if opt == 0:
-        break
 
-    elif opt == 1:
-        add_new_id=int(input("Enter task ID : "))
-        add_new_task=input("Enter task : ")
-        add_task(add_new_id,add_new_task)
+        if opt == 0:
+            break
 
-    elif opt == 2:
-        id=int(input("Enter task ID : "))
-        checking_status(id)
+        elif opt == 1:
+            add_new_id=int(input("Enter task ID : "))
+            add_new_task=input("Enter task : ")
+            add_task(add_new_id,add_new_task)
 
-    elif opt == 3:
-        opt2=int(input("Please enter task id here here :"))
-        print("""
-  ------------------------------------
-  |  For Update Description press D  |
-  |  For Update Status press S       |
-  |  For Update Both press B         |
-  ------------------------------------
-          """)
-  
-        update=input("Enter your optiont here : ").lower()
-        
-        if update == 'd':
-            new_task=input("Enter the new task here : ")
-            update_task(opt2,task=new_task)
-        elif update == 's':
-            update_task(opt2,status= True)
-        elif update == 'b':
-            new_task=input("Enter the new task here : ")
-            update_task(opt2,task=new_task,status=True)
-        else:
-            print("Invalid option")
+        elif opt == 2:
+            id=int(input("Enter task ID : "))
+            checking_status(id)
 
-    elif opt == 4:
-        id=int(input("Enter task ID : "))
-        single_task(id)
+        elif opt == 3:
+            opt2=int(input("Please enter task id here here :"))
+            print("""
+    ------------------------------------
+    |  For Update Description press D  |
+    |  For Update Status press S       |
+    |  For Update Both press B         |
+    ------------------------------------
+            """)
+    
+            update=input("Enter your optiont here : ").lower()
+            
+            if update == 'd':
+                new_task=input("Enter the new task here : ")
+                update_task(opt2,task=new_task)
+            elif update == 's':
+                update_task(opt2,status= True)
+            elif update == 'b':
+                new_task=input("Enter the new task here : ")
+                update_task(opt2,task=new_task,status=True)
+            else:
+                print("Invalid option")
 
-    elif opt == 5:
-        show_list()
+        elif opt == 4:
+            id=int(input("Enter task ID : "))
+            single_task(id)
 
-    elif opt == 6:
-        id=int(input("Enter task id : "))
-        delete_task(id)
+        elif opt == 5:
+            show_list()
 
-    elif opt == 7:
-        delete_list()    
+        elif opt == 6:
+            id=int(input("Enter task id : "))
+            delete_task(id)
+
+        elif opt == 7:
+            delete_list()    
+    except ValueError:
+        print("Invalid input")        
