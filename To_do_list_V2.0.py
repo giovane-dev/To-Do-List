@@ -29,19 +29,7 @@ def insert(task):
     print("================================")
     print("task added successfully")
     print("================================")
-#insert('task_two')    
 
-# def dynamic_update(id, task=None, status=None):
-#     conn = connect_to_database()
-#     cursor = conn.cursor()
-#     if task:
-#         cursor.execute(f"UPDATE tasks SET task = '{task}' WHERE id = {id}")
-#     if status is not None:
-#         new_status= 1 if status== 0 else 0
-#         cursor.execute("UPDATE tasks SET status = %s WHERE id= %s", (new_status, id))
-
-#     conn.commit()
-#     print(f"task {id} updated successfully")
 
 def dynamic_update(id, task=None, status=False):
     conn = connect_to_database()
@@ -192,23 +180,3 @@ while True:
 
             
 
-    # if status:
-    #     if status== 0:
-    #         cursor.execute(f"UPDATE tasks SET status = {True} WHERE id ={id}")
-    #     else:
-    #         cursor.execute(f"UPDATE tasks SET status = {False} WHERE id = {id}")
-
-
-#     def dynamic_update(id, task=None, status=None):
-#     conn = connect_to_database()
-#     cursor = conn.cursor()
-#     if task:
-#         cursor.execute(f"UPDATE tasks SET task = '{task}' WHERE id = {id}")
-#     if status is not None:
-#         new_status= 1 if status== 0 else 0
-#         cursor.execute("UPDATE tasks SET status = %s WHERE id= %s", (new_status, id))
-
-#     conn.commit()
-#     print(f"task {id} updated successfully")
-
-# dynamic_update(id=1, status=True)  
