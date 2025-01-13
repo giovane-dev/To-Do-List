@@ -6,9 +6,9 @@ def connect_to_database():
     conn=MySql.connect(
         host="localhost",
         user="root",
-        password="giovane@2005",
-        database="to_do_list",
-        port=4000
+        password="your password",
+        database="database name",
+        port="port"
     )
     return conn
 def setup_database():
@@ -93,10 +93,7 @@ def update():
     update_window.title("Update Task")
     update_window.iconbitmap("to_do_list.ico")
     center_window(update_window, 330, 170)
-    update_window.resizable(0,0)
-    # update_window.geometry("300x100")
-    # update_label=Label(master=update_window, text="Update Task", font=("Arial", 15))
-    # update_label.pack(pady=10) 
+    update_window.resizable(0,0) 
     button_frame=Frame(update_window, bg="#09b7e3")
     main_frame=Frame(update_window, bg="#09b7e3")
     main_frame.pack(pady=5, padx=5, fill=X)
@@ -131,8 +128,6 @@ def delete():
     center_window(delete_window, 230,80)
     delete_window.resizable(0,0)
     delete_window.iconbitmap("to_do_list.ico")
-    # delete_label=Label(master=delete_window, text="Delete Task", font=("Arial",15))
-    # delete_label.pack(pady=10)
     def confirm_delete():
         id=id_entry.get()
         if id:
